@@ -1,0 +1,64 @@
+body{
+
+    font-family: 'Roboto', sans-serif;
+}
+.app{
+    
+    margin: 0 auto;
+    width: 980px;
+}
+#input{
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    width: 40%;
+    height: 49px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+.btn{
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    width: 55px;
+    height: 55px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+table{
+    border: 2px solid black;
+    border-radius: 10px;
+}
+.task_table{
+    margin-top: 20px;
+}
+
+th{
+
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+
+}
+.delete{
+    color: #fff;
+    background-color: brown;
+    cursor: pointer;
+    border: 1px solid black;
+    }
+.green{
+    transition: 0.5s;
+    background-color: green;
+}
+.red{
+    transition: 0.5s;
+    background-color: red;
+}
+
+.f{
+    transition: 0.5s;
+    border: 1px solid black;
+}
+.delete:hover{
+    transition: 0.5s;
+    background-color: rgb(255, 19, 35);
+}
