@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Трекер привычек</title>
+
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    
+
+    <div class="container pt-3" id="app">
+        <h1>
+            Трекер привычек
+        </h1>
+
+    <form class="form-inline mb-3" @submit.prevent="createHabbit">
+        <div class="form-group mr-5">
+          <label for="name" class="mr-3">Привычка</label>
+          <input type="text" class="form-control" id="name" v-model="form.name" >
+        </div>
+        <div class="form-group mr-5">
+          <label for="value" class="mr-3">Описание</label>
+          <input type="text" class="form-control" id="value" v-model="form.value">
+        </div>
+        <button class="btn btn-primary" type="submit" :disabled="!canCreate">Создать</button>
+      </form>
+      <div v-if="habbits.length">
+        <div class="card mb-3" v-for="habbit in habbits">
+          <div class="card-body">
+            <h5 class="card-title" :style="{color:habbit.marked ? 'red' : 'black'}">{{habbit.name}}</h5>
+            <p class="card-text">{{habbit.value}}</p>
+            <button class="btn btn-primary" @click="markHabbit(habbit.id)">Отметить</button>
+            <button class="btn btn-danger" @click="removeHabbit(habbit.id)">Удалить</button>
+          </div>
+        </div>
+      </div>
+      <p v-else>Привычек пока нет</p>
+    </div>
+
+
+
+    <script type="module" src="frontend.js">
+
+    </script>
+</body>
+</html>
